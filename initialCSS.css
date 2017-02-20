@@ -1,0 +1,8 @@
+input.ng-strikeThrough{
+  font-style:italic;
+}
+/* would it be adding this when clicked? */
+
+.active {
+  color:red;
+}

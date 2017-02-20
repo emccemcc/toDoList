@@ -15,20 +15,27 @@
   <input ng-model="filterTextBox" type="text" placeholder="Filter">
   <!-- display list -->
 
-  <div >
+
     <ul>
                                       <!-- input box for filter-->
-    <li ng-repeat="(index, object) in toDoItems | filter: filterTextBox | orderBy: item"> {{object.taskName}} </li>
+    <li
+       ng-repeat="(index, object) in toDoItems | filter: filterTextBox | orderBy: item"
+       ng-click="select($index)"
+       ng-class="{active: $index == selected}">
+     {{object.taskName}}
+   </li>
     </ul>
-  </div>
+<p>selected: {{selected}}</p>
   <!-- add to list box -->
 
 <!-- submit button -->
 <form ng-submit="submit()">
-  <input ng-model="masterList.taskName" name="masterList.taskName" type="text" placeholder="Add Item">
+  <input ng-model="masterList.taskName"
+  name="masterList.taskName" type="text" placeholder="Add Item">
   <input type="submit" name="masterList.taskName" value="Submit"/>
-
-
+<!-- For focus later
+  ng-class="{active : activeMenu === toDoItems[0]}"
+  ng-click="activeMenu = toDoItems[]"  -->
 </form>
 
 
