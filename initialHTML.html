@@ -1,15 +1,35 @@
 <!-- starting -->
-<html ng-app>
+  <!-- create moduel -->
+<html ng-app="myModule">
 
 <head>
 <!-- AngularJS CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
 </head>
 
-<body>
+<body ng-controller="myController">
 
 
+<!-- initialize array list -->
 
+  <input ng-model="filterTextBox" type="text" placeholder="Filter">
+  <!-- display list -->
+
+  <div >
+    <ul>
+                                      <!-- input box for filter-->
+    <li ng-repeat="(index, object) in toDoItems | filter: filterTextBox | orderBy: item"> {{object.taskName}} </li>
+    </ul>
+  </div>
+  <!-- add to list box -->
+
+<!-- submit button -->
+<form ng-submit="submit()">
+  <input ng-model="masterList.taskName" name="masterList.taskName" type="text" placeholder="Add Item">
+  <input type="submit" name="masterList.taskName" value="Submit"/>
+
+
+</form>
 
 
 <!-- Scripts -->
