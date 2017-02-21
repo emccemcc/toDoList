@@ -15,13 +15,24 @@ $scope.submit = function() {
     }
   };
 //turn red when clicked
-$scope.selected = 0;
+$scope.selected = null;
 
 $scope.select = function (index){
   $scope.selected = index;
-  
-
 };
+
+//remove from list
+$scope.remove = function(toDoItems){
+  tempHold = $scope.selected;
+  $scope.toDoItems.splice(tempHold, 1);
+};
+
+/*
+$scope.selectRemove = function (indexTwo){
+  $scope.selectRemoved.pop({taskName:$scope.masterList.taskName});
+}; */
+//if double click = true remove?
+
   //end of myModule
   //go back to adding to an object
   //

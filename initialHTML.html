@@ -17,11 +17,13 @@
 
 
     <ul>
-                                      <!-- input box for filter-->
+                                      <!-- input box for filter ng-dblclick="selectRemove($indexTwo)"-->
     <li
        ng-repeat="(index, object) in toDoItems | filter: filterTextBox | orderBy: item"
        ng-click="select($index)"
-       ng-class="{active: $index == selected}">
+       ng-class="{active: $index == selected}"
+       ng-dblclick ="remove(toDoItems)">
+
      {{object.taskName}}
    </li>
     </ul>
@@ -42,6 +44,7 @@
 <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src = 'initialJS.js'> </script>
+  <link rel="stylesheet" href = 'initialCSS.css'/>
 </body>
 
 </html>
